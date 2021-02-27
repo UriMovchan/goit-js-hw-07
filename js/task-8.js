@@ -18,8 +18,8 @@ const boxesRef = document.querySelector('#boxes');
 let width = 30, height = 30;
 
 destroyBtn.addEventListener('click', () => boxesRef.innerHTML = '')
-const createBoxes = (amount) => {
 
+const createBoxes = (amount) => {
     while (amount > 0) {
         var r = () => Math.random() * 256;
 

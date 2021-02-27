@@ -4,7 +4,7 @@ const inputValidation = document.querySelector('#validation-input');
 const inputValidationLength = inputValidation.getAttribute('data-length');
 
 const validation = () => {
-    if (inputValidationLength == inputValidation.value.length) {
+    if (+inputValidationLength === inputValidation.value.length) {
         inputValidation.classList.remove('invalid');
         inputValidation.classList.add('valid');
     } else {

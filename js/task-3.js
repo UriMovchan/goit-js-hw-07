@@ -13,11 +13,27 @@ const images = [
   { url:'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', alt: 'Group of Horses Running' }
 ];
 
+/// /// Wrong solution
+// const galleryRef = document.querySelector('#gallery');
+
+// images.map(i => {
+//     galleryRef.insertAdjacentHTML('beforeend', `<li class="gallery__item" ><img class="gallery__img" src="${i.url}" alt="${i.alt}"/></li>`);
+// })
+
+// const galleryItemRef = galleryRef.querySelectorAll('.gallery__item');
+// const galleryImgRef = galleryRef.querySelectorAll('.gallery__img');
+
+// galleryRef.classList.add('gallery');
+// galleryItemRef.forEach(i => i.classList.add('gallery__item'));
+// galleryImgRef.forEach(i => i.classList.add('gallery__img'));
+
+
+/// Second try 
 const galleryRef = document.querySelector('#gallery');
 
-images.map(i => {
-    galleryRef.insertAdjacentHTML('beforeend', `<li class="gallery__item" ><img class="gallery__img" src="${i.url}" alt="${i.alt}"/></li>`);
-})
+const insert = (item) => galleryRef.insertAdjacentHTML('beforeend', item);
+
+images.map(i => insert(`<li class="gallery__item" ><img class="gallery__img" src="${i.url}" alt="${i.alt}" /></li>`))
 
 const galleryItemRef = galleryRef.querySelectorAll('.gallery__item');
 const galleryImgRef = galleryRef.querySelectorAll('.gallery__img');
@@ -25,6 +41,5 @@ const galleryImgRef = galleryRef.querySelectorAll('.gallery__img');
 galleryRef.classList.add('gallery');
 galleryItemRef.forEach(i => i.classList.add('gallery__item'));
 galleryImgRef.forEach(i => i.classList.add('gallery__img'));
-
 
 

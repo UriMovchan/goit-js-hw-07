@@ -6,9 +6,22 @@
 
 const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Помидоры', 'Зелень', 'Приправы'];
 
+/// Wrong solution
+// ingredients.forEach(i => {
+//     const ingredientsRef = document.querySelector('#ingredients');
+//     const li = document.createElement('li');
+//     li.innerHTML = i;
+//     ingredientsRef.prepend( li );
+// });
+
+/// Second try
+const ingredientsRef = document.querySelector('#ingredients');
+
+const insert = (item) => ingredientsRef.prepend( item );
+
 ingredients.forEach(i => {
-    const ingredientsRef = document.querySelector('#ingredients');
     const li = document.createElement('li');
     li.innerHTML = i;
-    ingredientsRef.prepend( li );
+    insert(li);
 });
+
