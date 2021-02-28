@@ -15,13 +15,24 @@ const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Поми
 // });
 
 /// Second try
+// const ingredientsRef = document.querySelector('#ingredients');
+
+// const insert = (item) => ingredientsRef.prepend( item );
+
+// ingredients.forEach(i => {
+//     const li = document.createElement('li');
+//     li.innerHTML = i;
+//     insert(li);
+// });
+
+/// Third try
 const ingredientsRef = document.querySelector('#ingredients');
 
-const insert = (item) => ingredientsRef.prepend( item );
-
-ingredients.forEach(i => {
-    const li = document.createElement('li');
-    li.innerHTML = i;
-    insert(li);
+const arr = ingredients.map(i => {
+    let li = document.createElement('li');
+    li.textContent = i
+    return li
 });
+
+ingredientsRef.append(...arr);
 
